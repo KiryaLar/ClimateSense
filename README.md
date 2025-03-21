@@ -100,11 +100,11 @@ System.out.println(response.getStatusCode());
 Получение измерений по конкретному сенсору  
 Метод: GET /sensor/measurements?name={sensorName}
 
-# Пример вызова:
+### Пример вызова:
 GET /sensor/measurements?name=Mega%20sensor
 
-Ответ (JSON-массив):
-
+**Ответ (JSON-массив):**
+```json
 [
   {
     "temperature": 23.4,
@@ -115,16 +115,17 @@ GET /sensor/measurements?name=Mega%20sensor
   },
   ...
 ]
+```
 
 Статус:
 
 200 OK при успехе.
 400 Bad Request / 404 при неправильном параметре.
 
-Добавление измерения  
-Метод: POST /measurements/add  
-Тело (JSON):
-
+## Добавление измерения  
+**Метод:** POST /measurements/add  
+**Тело (JSON):**
+```json
 {
   "temperature": 25.5,
   "raining": true,
@@ -132,17 +133,18 @@ GET /sensor/measurements?name=Mega%20sensor
     "name": "Mega sensor"
   }
 }
+```
 
 Ответ:
 
 200 OK при успехе.
 400 Bad Request при ошибке валидации (неверное поле temperature и т.д.).
 
-Получение всех измерений  
+## Получение всех измерений  
 Метод: GET /measurements  
 
-Ответ (JSON-массив):
-
+**Ответ (JSON-массив):**
+```json
 [
   {
     "temperature": 25.5,
@@ -153,21 +155,23 @@ GET /sensor/measurements?name=Mega%20sensor
   },
   ...
 ]
+```
 
 Статус: 200 OK.
 
-Получение количества дождливых дней  
-Метод: GET /measurements/rainyDaysCount  
-Параметры: (необязательные) startDate, endDate в формате YYYY-MM-DD.
+## Получение количества дождливых дней  
+**Метод:** GET /measurements/rainyDaysCount  
+**Параметры:** (необязательные) startDate, endDate в формате YYYY-MM-DD.
 
-Примеры:
+**Примеры:**
 GET /measurements/rainyDaysCount (за всё время)
 GET /measurements/rainyDaysCount?startDate=2025-01-01&endDate=2025-12-31
 
-Ответ (JSON):
-
+**Ответ (JSON):**
+```json
 {
   "rainy days": 10,
   "startDate": "2025-01-01",
   "endDate": "2025-12-31"
 }
+```
