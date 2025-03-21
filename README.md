@@ -1,4 +1,4 @@
-# ClimateSense
+# ClimateSensors REST API
 
 ClimateSense – REST API-сервис на Spring Boot для мониторинга климатических параметров, таких как температура и осадки, на основе данных с сенсоров.
 
